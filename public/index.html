@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aadhaar Verification</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="keywords" content="Aadhaar details">
+    <meta name="author" content="Pranav Pawar">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="/" class="brand">
+                <img src="logo.webp" alt="Logo" class="logo"> AadhaarTrust
+            </a>
+        </div>
+    </nav>
+    
+    <div class="container main-content">
+        <div class="grid">
+            <div class="left-grid glass">
+                <h2>Enter Aadhaar Details</h2>
+                <form id="aadhaar-form">
+                    <div class="form-group">
+                        <label for="aadhaar-number">Aadhaar Number:</label>
+                        <input type="text" id="aadhaar-number" required>
+                    </div>
+                    <div class="form-group">
+                        <button type="button" id="send-otp-btn">Send OTP</button>
+                    </div>
+                    <div class="form-group" id="otp-section" style="display: none;">
+                        <label for="otp">OTP:</label>
+                        <input type="text" id="otp" required style="margin-bottom: 15px;">
+                        <button type="button" id="verify-otp-btn">Verify OTP</button>
+                    </div>
+                </form>
+                <div id="message"></div>
+            </div>
+            <div class="right-grid glass">
+                <h2>Aadhaar Information</h2>
+                <div id="aadhaar-info"></div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>&copy; 2024 AadhaarTrust. All rights reserved.</p>
+    </footer>
+    
+    <script src="script.js"></script>
+</body>
+</html>

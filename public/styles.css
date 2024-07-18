@@ -1,0 +1,198 @@
+html, body {
+    overflow: auto; /* Allow overflow for both the html and body */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: url('bg.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.navbar {
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5em;
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.main-content {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.grid {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.left-grid, .right-grid {
+    flex: 1;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    animation: slideUp 1.5s ease-in-out;
+}
+
+.glass {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 95%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #2575fc;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0a47af;
+}
+
+#message, #aadhaar-info {
+    margin-top: 20px;
+    text-align: left;
+}
+
+footer {
+    
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    margin-top: auto; /* Ensures footer is pushed to the bottom */
+  }
+  
+  footer p {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+@media (max-width: 768px) {
+    .grid {
+        flex-direction: column;
+        width: 100%;
+        padding: 10px;
+    }
+
+    .left-grid, .right-grid {
+        width: 100%;
+        padding: 20px;
+    }
+
+    .navbar .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .brand {
+        font-size: 1.2em;
+    }
+
+    .logo {
+        width: 30px;
+        height: 30px;
+        margin-right: 5px;
+    }
+
+    .left-grid, .right-grid {
+        padding: 15px;
+    }
+
+    button {
+        padding: 8px 16px;
+    }
+
+    footer p {
+        margin-bottom: 5px;
+        font-size: 1rem;
+    }
+
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(20px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
