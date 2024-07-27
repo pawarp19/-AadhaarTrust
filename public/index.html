@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aadhaar Verification</title>
+    <title>AadhaarTrust</title>
     <link rel="stylesheet" href="styles.css">
-    <meta name="keywords" content="Aadhaar details">
+    <meta name="description" content="Secure Aadhaar verification portal. Enter your Aadhaar details and verify your identity.">
+    <meta name="keywords" content="Aadhaar, Aadhaar Verification, UIDAI">
     <meta name="author" content="Pranav Pawar">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
     <nav class="navbar">
@@ -24,18 +26,18 @@
                 <form id="aadhaar-form">
                     <div class="form-group">
                         <label for="aadhaar-number">Aadhaar Number:</label>
-                        <input type="text" id="aadhaar-number" required>
+                        <input type="text" id="aadhaar-number" pattern="\d{12}" maxlength="12" placeholder="Enter 12-digit Aadhaar Number" required>
                     </div>
                     <div class="form-group">
                         <button type="button" id="send-otp-btn">Send OTP</button>
                     </div>
                     <div class="form-group" id="otp-section" style="display: none;">
                         <label for="otp">OTP:</label>
-                        <input type="text" id="otp" required style="margin-bottom: 15px;">
+                        <input type="text" id="otp" pattern="\d{6}" maxlength="6" placeholder="Enter OTP" required style="margin-bottom: 15px;">
                         <button type="button" id="verify-otp-btn">Verify OTP</button>
                     </div>
                 </form>
-                <div id="message"></div>
+                <div id="message" aria-live="polite"></div>
             </div>
             <div class="right-grid glass">
                 <h2>Aadhaar Information</h2>

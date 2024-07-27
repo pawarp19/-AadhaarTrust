@@ -16,6 +16,7 @@ app.post('/get-otp', (req, res) => {
         headers: { 
             'Content-Type': 'application/json', 
             'Authorization': 'pKOtFz4UmMHwR2aeu432uPzdNEdzvP8H'
+            
         },
         data: JSON.stringify({ aadhaarNumber })
     };

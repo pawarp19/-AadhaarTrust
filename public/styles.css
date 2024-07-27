@@ -1,13 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
 html, body {
-    overflow: auto; /* Allow overflow for both the html and body */
-    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS */
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background: url('bg.jpg') no-repeat center center fixed;
-    background-size: cover;
-    color: #fff;
+    font-family: "Lora", serif;
+    background: linear-gradient(to bottom, #ffffff, #f2f2f2);
+    color: #333;
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -16,11 +16,14 @@ body {
 }
 
 .navbar {
-    padding: 10px 20px;
+    padding: 10px 0px;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
+    background-color: #003366; /* Deep blue */
+    color: #ffffff; /* White */
+    border-bottom: 2px solid #ff9933; /* Saffron */
 }
 
 .navbar .container {
@@ -30,7 +33,7 @@ body {
 }
 
 .brand {
-    color: #fff;
+    color: #ffffff;
     text-decoration: none;
     font-size: 1.5em;
     display: flex;
@@ -41,6 +44,7 @@ body {
     width: 40px;
     height: 40px;
     margin-right: 10px;
+    padding-left: 20px;
 }
 
 .main-content {
@@ -64,24 +68,15 @@ body {
 .left-grid, .right-grid {
     flex: 1;
     padding: 40px;
-    background: rgba(255, 255, 255, 0.1);
+    background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
     animation: slideUp 1.5s ease-in-out;
-}
-
-.glass {
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
 }
 
 h2 {
     margin-top: 0;
+    color: #003366;
 }
 
 .form-group {
@@ -91,12 +86,13 @@ h2 {
 label {
     display: block;
     margin-bottom: 5px;
+    color: #003366;
 }
 
 input {
     width: 95%;
     padding: 10px;
-    border: none;
+    border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 }
@@ -105,15 +101,15 @@ button {
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #2575fc;
-    color: #fff;
+    background-color: #003366;
+    color: #ffffff;
     cursor: pointer;
     margin-top: 10px;
     transition: background-color 0.3s ease;
 }
 
 button:hover {
-    background-color: #0a47af;
+    background-color: #002244;
 }
 
 #message, #aadhaar-info {
@@ -122,17 +118,17 @@ button:hover {
 }
 
 footer {
-    
-    color: #fff;
+    background-color: #003366;
+    color: #ffffff;
     padding: 20px 0;
     text-align: center;
-    margin-top: auto; /* Ensures footer is pushed to the bottom */
-  }
-  
-  footer p {
+    margin-top: auto;
+}
+
+footer p {
     margin: 0;
     font-size: 1rem;
-  }
+}
 
 @media (max-width: 768px) {
     .grid {
@@ -146,11 +142,17 @@ footer {
         padding: 20px;
     }
 
+    .logo {
+        width: 40px;
+        height: 40px;
+        margin-right: 5px;
+        padding-left: 0px;
+    }
+
     .navbar .container {
         flex-direction: column;
         align-items: center;
     }
-
 }
 
 @media (max-width: 480px) {
@@ -162,6 +164,7 @@ footer {
         width: 30px;
         height: 30px;
         margin-right: 5px;
+        padding-left: 0px;
     }
 
     .left-grid, .right-grid {
@@ -176,7 +179,6 @@ footer {
         margin-bottom: 5px;
         font-size: 1rem;
     }
-
 }
 
 @keyframes fadeIn {
