@@ -83,5 +83,5 @@ function showSpinner(button) {
     setTimeout(function() {
         spinner.style.display = 'none';
         button.disabled = false;
-    }, 2000); // Simulate a delay for demonstration
+    }, 3000); // Simulate a delay for demonstration
 }
