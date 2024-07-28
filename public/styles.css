@@ -1,10 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
 html, body {
     overflow: auto;
     -webkit-overflow-scrolling: touch;
-}
-
-body {
     font-family: "Lora", serif;
     background: linear-gradient(to bottom, #ffffff, #f2f2f2);
     color: #333;
@@ -16,20 +14,22 @@ body {
 }
 
 .navbar {
-    padding: 10px 0px;
+    padding: 10px 20px;
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 1000;
-    background-color: #003366; /* Deep blue */
-    color: #ffffff; /* White */
-    border-bottom: 2px solid #ff9933; /* Saffron */
+    background-color: #003366;
+    color: #ffffff;
+    border-bottom: 2px solid #ff9933;
+    box-sizing: border-box;
 }
 
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap; /* Allows wrapping on small screens */
 }
 
 .brand {
@@ -38,40 +38,45 @@ body {
     font-size: 1.5em;
     display: flex;
     align-items: center;
+    flex-shrink: 0;
 }
 
 .logo {
     width: 40px;
     height: 40px;
     margin-right: 10px;
-    padding-left: 20px;
 }
 
 .main-content {
     margin-top: 80px;
+    padding: 20px;
+    flex-grow: 1;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-grow: 1;
     animation: fadeIn 1.5s ease-in-out;
+    box-sizing: border-box;
 }
 
 .grid {
     display: flex;
+    flex-direction: row;
     gap: 20px;
-    padding: 20px;
-    width: 90%;
+    width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 10px; /* Padding to prevent overflow */
+    box-sizing: border-box;
 }
 
 .left-grid, .right-grid {
     flex: 1;
-    padding: 40px;
+    padding: 20px;
     background: #ffffff;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     animation: slideUp 1.5s ease-in-out;
+    box-sizing: border-box;
 }
 
 h2 {
@@ -90,15 +95,17 @@ label {
 }
 
 input {
-    width: 95%;
-    padding: 10px;
+    width: 100%;
+    padding: 12px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
 }
 
 button {
-    padding: 10px 20px;
+    width: 100%; /* Full-width for buttons */
+    padding: 10px;
     border: none;
     border-radius: 5px;
     background-color: #003366;
@@ -120,9 +127,10 @@ button:hover {
 footer {
     background-color: #003366;
     color: #ffffff;
-    padding: 20px 0;
+    padding: 20px;
     text-align: center;
     margin-top: auto;
+    box-sizing: border-box;
 }
 
 footer p {
@@ -131,10 +139,15 @@ footer p {
 }
 
 @media (max-width: 768px) {
+    .navbar .container {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .grid {
         flex-direction: column;
-        width: 100%;
-        padding: 10px;
+        gap: 20px;
+        padding: 0 5px;
     }
 
     .left-grid, .right-grid {
@@ -143,15 +156,7 @@ footer p {
     }
 
     .logo {
-        width: 40px;
-        height: 40px;
         margin-right: 5px;
-        padding-left: 0px;
-    }
-
-    .navbar .container {
-        flex-direction: column;
-        align-items: center;
     }
 }
 
@@ -164,7 +169,6 @@ footer p {
         width: 30px;
         height: 30px;
         margin-right: 5px;
-        padding-left: 0px;
     }
 
     .left-grid, .right-grid {
@@ -176,7 +180,6 @@ footer p {
     }
 
     footer p {
-        margin-bottom: 5px;
         font-size: 1rem;
     }
 }
@@ -197,4 +200,22 @@ footer p {
     to {
         transform: translateY(0);
     }
+}
+/* Spinner Styles */
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #ffffff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+
+/* Spinner Animation */
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

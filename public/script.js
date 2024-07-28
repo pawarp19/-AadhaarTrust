@@ -73,3 +73,15 @@ function resetRightGrid() {
     const aadhaarInfoDiv = document.getElementById('aadhaar-info');
     aadhaarInfoDiv.innerHTML = ''; // Clear the right grid content
 }
+
+function showSpinner(button) {
+    var spinner = button.querySelector('.spinner');
+    button.disabled = true;
+    spinner.style.display = 'inline-block';
+
+    // Simulate an API call or any process
+    setTimeout(function() {
+        spinner.style.display = 'none';
+        button.disabled = false;
+    }, 2000); // Simulate a delay for demonstration
+}
